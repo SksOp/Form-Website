@@ -1,0 +1,35 @@
+{{>headerAdmin}}
+
+{{!-- <div class="container">
+{{#each pendingForms}}
+    <p><a href="">{{this.name}}</a> - {{this.phoneNumber}}</p> 
+{{/each}}
+</div> --}}
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Total Tickets</th>
+      <th scope="col">Tickets Left</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each ticketInfo}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.totalTickets}}</td>
+            <td>{{this.ticketsLeft}}</td>
+            
+        </tr>
+        
+    {{/each}}
+  </tbody>
+</table>
+
+
+{{!-- {{pendingForms}} --}}
+
+{{>footer}}

@@ -1,0 +1,14 @@
+{{>headerAdmin}}
+ 
+        <form action="/logout" method="post">
+      
+        <button type="submit" class="btn btn-danger admin-btns">Log Out</button></form>
+        {{!-- <button onclick="location.href=''" type="button" class="btn btn-danger admin-btns">LOGOUT</button> --}}
+
+    <div class="admin-container">
+        <button onclick="location.href='/admin/lists/pending'" type="button" class="btn btn-danger admin-btns">PENDING FORMS</button>
+        <button onclick="location.href='/admin/lists/verified'" type="button" class="btn btn-outline-danger admin-btns">VERIFIED FORMS</button>
+        <button onclick="location.href='/admin/lists/ticketsInfo'" type="button" class="btn btn-outline-danger admin-btns">VIEW TICKETS STATUS</button>
+    </div>
+
+{{>footer}}

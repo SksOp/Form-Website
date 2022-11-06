@@ -1,0 +1,57 @@
+{{>header}}
+ 
+<h1 class="head-congo text-danger" >Sree Sree Barambaba Ka Mela</h1>
+    <div class="container">
+        <div class="row row-first">
+            <div class="col col-3">
+                <img class="img-god-left" src="/images/pic.png" alt="">
+            </div>
+            <div class="col col-6" style="    display: flex;">
+                <p class="congo-p1 align-self-center ">Congratulations! You have been selected to set up shop in Barambaba's fair</p>
+            </div>
+            <div class="col col-3">
+                <img class="img-god-left" src="/images/pic.png" alt="">
+            </div>
+        </div>
+        <div class="row row-2nd">
+            <div class="col-12 col">
+                <p>Your serial no. is {{thisPersonData.serialNo}}</p>
+            </div>
+        </div>
+        <div class="row row-3rd">
+            <div class="col-12 col">
+                <p class="details-general">Now you have to deopsit the Donation amount in Bank account given below and send the sreenshot or the token of depositing donation amount in the bank on Whatsapp Number 7002285265 </p>
+                <p class="details-col">Your Name: {{thisPersonData.name}}</p>
+                <p class="details-col">Your Serial no.: {{thisPersonData.serialNo}}</p>
+            </div>
+        </div>
+
+        <div class="row row-4th">
+            <div class="col-8 col"><br>
+            <h3><strong>Your donation amount is <span class="text-danger">Rs. {{thisPersonData.price}}</strong><span></h3>
+            <p><span class="text-danger">(Ignore if already paid)</span></p>
+            <br>
+            <p class="details-acc">
+                Account no -<strong> 31485982313</strong><br>
+                IFSC-<strong> SBIN0007061</strong><br>
+                Acc. Holder Name - <strong>Barambaba Mandir Parichalana committee</strong>
+            </p>
+            
+            <p class="h6">After payment kindly collect the Receipt Copy from the committee.</p></div>
+        </div>
+        <div class="row row-5th">
+            <div class="col-md-1 col-4 col">
+            </p>
+            <img style="width: 100%; height: auto%; margin: 5% auto 1%;" src="/images/sign.png" alt="">
+            <p>Signature of president<br>
+                <strong>Dhrubonath Singh.</strong>
+            </p></div>
+        </div>
+        <p class="h6 h6-last">NB: On the day you will be shown the place to set up the shop, it is mandatory for you to bring the
+            original copy of your Aadhar card, trade license, and certificate of appreciation.</p>
+            <button onclick="window.print()">Print this page</button>
+            <div style="background-color: rgb(234, 234, 234); ; "><br></div>
+        </div>   
+
+
+{{>footer}}

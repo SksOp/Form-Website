@@ -1,0 +1,269 @@
+{{>header}}
+
+
+
+<form action="/register" method="post" enctype="multipart/form-data">
+
+        <div class="container-reg " id="newp1">
+            <div class="login">
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input required type="number" max="9999999999" min="1000000000" class="form-control" id="exampleInputEmail1" name="phone"
+                        placeholder="Enter Your Phone No.">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Create Password</label>
+                    <input required type="password" class="form-control" name="password" placeholder="Create Password">
+                </div>
+                <div onclick="hide('newp1','newp2')" class="hider">
+                    <p>Next</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-reg " id="newp2">
+            <div class="login p2c">
+                <div onclick="hide('newp2','newp1')" class="hider">
+                    <p>Back</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input required type="text" class="form-control" name="name" placeholder="Full name">
+
+                </div>
+                <div class="form-group">
+                    <label>C/o</label>
+                    <input required type="text" class="form-control" name="co" placeholder="C/o">
+                </div>
+                <div class="form-group">
+                    <label>Shop address</label>
+                    <input required name="sAdd" type="text" class="form-control" placeholder="Full shop address">
+                </div>
+                <div class="form-group">
+                    <label>Permanent address</label>
+                    <input required name="pAdd" type="text" class="form-control" placeholder="Enter Permanent address">
+                </div>
+                <div class="form-group">
+                    <label>Village/Town</label>
+                    <input required type="text" name="vill" class="form-control" placeholder="Village/Town">
+                </div>
+                <div class="form-group">
+                    <label>Post office</label>
+                    <input required name="po" type="text" class="form-control" placeholder="P.O.">
+                </div>
+                <div class="form-group">
+                    <label>District</label>
+                    <input required type="text" name="dis" class="form-control" placeholder="Enter District">
+                </div><div class="form-group">
+                    <label>State</label>
+                    <input required name="state" type="text" class="form-control" placeholder="Enter State">
+                </div>
+                <div class="form-group">
+                    <label>Pin Code</label>
+                    <input required type="tel" name="pin" class="form-control" placeholder="Area Pincode">
+                </div>
+                <div class="form-group">
+                    <label>Whatsapp No.</label>
+                    <input name="wp" type="tel" class="form-control" placeholder="Optional">
+                </div>
+                <div class="form-group">
+                    <label>Email Id</label>
+                    <input type="email" name="email" class="form-control" placeholder="Optional">
+                </div>
+                <div onclick="hide('newp2','newp3')" class="hider">
+                    <p>Next</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-reg" id="newp3">
+            <div class="login ">
+                <div onclick="hide('newp3','newp2')" class="hider">
+                    <p>Back</p>
+                </div>
+                {{!-- <div class="form-group">
+                <select name="hPrice" class="form-select  form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Select Haath</option>
+                    {{#each newDoc.newDoc.newDoc.haathData}}
+                        <option value="{{this.price}}">{{this.name}} (Rs. {{this.price}})</option>
+                    {{/each}}
+                </select></div> --}}
+                <div class="form-group">
+                    <label>Select the Category</label>
+                <select name="category" id= "dropdown"class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                    <option selected>Select Category</option>
+                    {{#each newDoc}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}
+                </select></div>
+
+                {{!-- <div class="form-group">
+                    <label>No. of Tickets</label>
+                    <input type="number" name="ticketsCount"id="noTicket" class="form-control" placeholder="Enter the no. of tickets you want to buy">
+                    <label id="alert"class="form-label"><span style="color: red;">Not enough Tickets available. Please enter smaller amount</span></label>
+                </div> --}}
+                <label id="alert"class="form-label"><span style="color: red;">Not enough Tickets available. Please enter smaller amount</span></label>
+                <div onclick="hide('newp3','newp4')" class="hider" id="ticketNextbtn">
+                    <p>Next</p>
+                </div>
+        
+            </div>
+        </div>
+        <div class="container-reg" id="newp4">
+            
+            <div class="login ">
+                <div onclick="hide('newp4','newp3')" class="hider">
+                    <p>Back</p>
+                </div>
+                <div class="mb-3">
+                    <label for="adf" name="adf" class="form-label al">Aadhar Card / Voter Id Front<span style="color: red;"> (*required)</span></label>
+                    <br><small style="color: grey;">(Max file size: 5mb)</small>
+                    <input required id="adf" class="form-control" type="file" accept="image/*" name="adf">
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label al">Aadhar Card / Voter Id Back<span style="color: red;"> (*required)</span></label>
+                    <br><small style="color: grey;">(Max file size: 5mb)</small>
+                    <input required class="form-control" name="adb" accept="image/*" type="file" >
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label al">Trade license<span style="color: red;"> (*optional)</span></label>
+                    <br><small style="color: grey;">(Max file size: 5mb)</small>
+                    <input class="form-control" name="tdl" accept="image/*" type="file"  >
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label al">Appreciation letter Front<span style="color: red;"> (*optional)</span></label>
+                    <br><small style="color: grey;">( Earlier given by the mandir commitee ) (Max file size: 5mb)</small>
+                    <input class="form-control" name="td2" accept="image/*" type="file"  >
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label al">Appreciation letter Back<span style="color: red;"> (*optional)</span></label>
+                    <br><small style="color: grey;">(Max file size: 5mb)</small>
+                    <input class="form-control " name="al" accept="image/*" type="file" id="formFile">
+                </div>
+                
+                <div onclick="unhide()" class="hider">
+                    <p>Next</p>
+                </div>
+        
+            </div>
+        </div>
+        <button type="submit" class="btn submitBtn btn-danger">Submit</button>
+     
+    </form>
+     <div class="pleasewait">
+            <div class="loading">
+                <p>Please wait</p>
+                <span><i></i><i></i></span>
+            </div>
+    </div>
+    <p class="userContactHeader">Contact 7002285265 for support</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        
+        const delay = (delayInms) => {
+            return new Promise(resolve => setTimeout(resolve, delayInms));
+            }           
+
+
+        async function hide(i, j) {
+            $("#" + i).css("display", "none")
+            $("#" + j).css("display", "block")
+            let delayres2 = await delay(200);
+           if(i==="newp3"){alert("Please Upload image smaller than 5 mb")}
+            
+        }
+
+        
+
+        function unhide() {
+            $(".container-reg").css("display", "block")
+            $(".submitBtn").css("display", "inline")
+            $(".hider").css("display", "none")
+            $("body").css("background-image","url()")
+        }
+       
+        var  objArr ={
+            {{#each newDoc}}
+                      "{{this.name}}":  {{this.ticketsLeft}} ,
+            {{/each}}
+        } 
+
+         var catSelect = document.getElementById("dropdown");
+         var tickets;
+         function onChangedropdown(){
+                var selectedText = catSelect.options[catSelect.selectedIndex].text;
+              //  console.log(objArr[selectedText])
+                $("#noTicket").attr({"max" : objArr[selectedText],"min":0});
+                tickets=objArr[selectedText]
+                console.log(tickets)
+                if(tickets===0){
+                     $("#alert").css("display", "block")
+                     $("#alert").html("This category is Sold out!")
+                      $('button').prop('disabled', true);
+                      $("#ticketNextbtn").css("display", "none")
+                }else{
+                    $("#alert").css("display", "none")
+                     if($("#newp4").css("display")==="none"){
+                        $("#ticketNextbtn").css("display", "block")
+                    }
+                    $('button').prop('disabled', false);
+
+                }
+         }
+         catSelect.onchange=onChangedropdown;
+         onChangedropdown();
+         
+         /*
+         var ticketSelect = document.getElementById("noTicket");
+         function onChangeticket(){
+                //var value = ticketSelect.value; (for getting value from number box)
+                var value = 1;
+                var selectedText = catSelect.options[catSelect.selectedIndex].text
+                 var tickets= objArr[selectedText]
+                 console.log("hello")
+                if(tickets===0){
+                     $("#alert").css("display", "block")
+                     $("#alert").html("This category is Sold out!")
+                      $('button').prop('disabled', true);
+                } 
+                else if(value>tickets ){
+                     $("#alert").html("Not enough Tickets available. Please enter smaller amount")
+                     $("#alert").css("display", "block")
+                     $("#ticketNextbtn").css("display", "none")
+                      $('button').prop('disabled', true);
+                }
+                else if(value<=tickets ){
+                
+                     $("#alert").css("display", "none")
+                     if($("#newp4").css("display")==="none"){
+                        $("#ticketNextbtn").css("display", "block")
+                    }
+                    $('button').prop('disabled', false);
+
+                }
+        }
+        ticketSelect.onchange=onChangeticket;
+        onChangeticket();
+        */
+        $("button").click(async function() {
+            if($('form')[0].checkValidity()){
+                let delayres1 = await delay(500);
+                $('button').prop('disabled', true);
+                let delayres3 = await delay(1000);
+                $(".container-reg").css("display", "none")
+                $("button").css("display", "none")
+                $(".pleasewait").css("display", "block")
+            }
+
+        });
+
+        
+    </script>
+
+
+    {{>footer}}

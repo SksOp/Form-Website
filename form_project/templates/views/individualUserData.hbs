@@ -1,0 +1,188 @@
+{{>headerAdmin}}
+
+{{!-- <div class="container">
+{{#each pendingForms}}
+    <p><a href="">{{this.name}}</a> - {{this.phoneNumber}}</p> 
+{{/each}}
+</div> --}}
+
+
+<table class="table">
+  {{!-- <tbody>
+    <tr>
+      <th class="text-nowrap" scope="row">Name</th>
+      <td colspan="6">{{pendingIndv.phoneNumber}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Phone Number</th>
+    </tr>
+    <tr>
+      <th scope="row">CO</th>
+    </tr>
+    <tr>
+      <th scope="row">Shop Address</th>
+    </tr>
+    <tr>
+      <th scope="row">Permanent Address</th>
+    </tr>
+    <tr>
+      <th scope="row">Whatsapp Number</th>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+    </tr>
+    <tr>
+      <th scope="row">Price</th>
+    </tr>
+    <tr>
+      <th scope="row">Category</th>
+    </tr>
+    <tr>
+      <th scope="row">Aadhar Front Link</th>
+    </tr>
+    <tr>
+      <th scope="row">Aadhar Back Link</th>
+    </tr>
+    <tr>
+      <th scope="row">Trade License</th>
+    </tr>
+    <tr>
+      <th scope="row">Mandir Apprecitation Letter</th>
+    </tr>
+  </tbody> --}}
+
+  <tbody>
+      <tr>
+        <th class="text-nowrap" scope="row">Serial No.</th>
+        <td colspan="6">{{pendingIndv.serialNo}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Name</th>
+        <td colspan="6">{{pendingIndv.name}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Date</th>
+        <td colspan="6">{{pendingIndv.fillupDate}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Time</th>
+        <td colspan="6">{{pendingIndv.fillupTime}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Phone Number</th>
+        <td colspan="6">{{pendingIndv.phoneNumber}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Password</th>
+        <td colspan="6">{{pendingIndv.password}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">CO</th>
+        <td colspan="6">{{pendingIndv.co}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Shop Address</th>
+        <td colspan="6">{{pendingIndv.shopAdd}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Permanent Address</th>
+        <td colspan="6">{{pendingIndv.permaAdd}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Town</th>
+        <td colspan="6">{{pendingIndv.town}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">P.O.</th>
+        <td colspan="6">{{pendingIndv.po}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">District</th>
+        <td colspan="6">{{pendingIndv.district}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">State</th>
+        <td colspan="6">{{pendingIndv.state}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Pincode</th>
+        <td colspan="6">{{pendingIndv.pincode}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Whatsapp Number</th>
+        <td colspan="6">{{pendingIndv.wNo}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Email</th>
+        <td colspan="6">{{pendingIndv.email}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">No. of Tickets</th>
+        <td colspan="6">{{pendingIndv.noOfTicets}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Category</th>
+        <td colspan="6">{{pendingIndv.category}}</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Price</th>
+        <td colspan="6">{{pendingIndv.price}}</td>
+      </tr>
+      
+      <tr>
+        <th class="text-nowrap" scope="row">Aadhar/Voter ID Front</th>
+        
+        <td colspan="6" ><a href="{{pendingIndv.aadharFLink}}" target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Aadhar/Voter ID Back</th>
+        <td colspan="6"><a href="{{pendingIndv.aadharBLink}}"target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Trade License</th>
+        <td colspan="6"><a href="{{pendingIndv.tradeLicLinkF}}" target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Apprecitation Letter Front</th>
+        <td colspan="6"><a href="{{pendingIndv.tradeLicLinkB}}" target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Apprecitation Letter Back</th>
+        <td colspan="6"><a href="{{pendingIndv.appreciationLetLink}}"target="_blank">Click here</a></td>
+      </tr>
+</tbody>
+</table>
+
+<form action="/admin/lists/data/:phone" method="post">
+  <input type = "hidden" name = "topic" value = "{{pendingIndv.phoneNumber}}" />
+  <button type="submit" class="btn btn-danger btn-verify">CLICK HERE TO VERIFY THIS DOCUMENT</button>
+</form>
+
+
+<form action="/admin/lists/data/:phone" method="post">
+  <input type = "hidden" name = "payTopic" value = "{{pendingIndv.phoneNumber}}" />
+  <button type="submit" class="btn btn-danger btn-paid">CLICK HERE TO CONFIRM PAYMENT</button>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+  var x = {{pendingIndv.isVerified}};
+  var y = {{pendingIndv.hasPaid}};
+  if(x && y){
+    $(".btn-verify").css("display", "none");
+    $(".btn-paid").css("display", "none");
+  }
+  else if(!y){
+    if(x){
+       $(".btn-verify").css("display", "none");
+    }
+    else{
+      $(".btn-paid").css("display", "none");
+    }
+  }
+</script>
+
+{{!-- {{pendingForms}} --}}
+
+{{>footer}}
